@@ -17,6 +17,7 @@ li {
     list-style: none;
     border-bottom: 1px solid rgba(132, 132, 132, 0.39);
     padding: 0.5rem;
+    cursor: pointer;
 }
 
 .logo {

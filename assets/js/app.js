@@ -62,7 +62,15 @@ const app = new Vue({
                 text: '',
                 done: false
             }
+        },
 
+        taskDone(index){
+            //console.log('clicca su item');
+            if (this.tasks[index].done === false) {
+                this.tasks[index] = true;
+            } else if (this.tasks[index].done === true) {
+                this.tasks[index] = false
+            } 
         }
     }
 })
