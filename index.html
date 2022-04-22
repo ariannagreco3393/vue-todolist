@@ -26,12 +26,13 @@
                 <button @click="addTask">Aggiungi</button>
             </div>
             <div class="tasks">
-                <ul>
+                <ul v-if="tasks.length > 0">
                     <li v-for="(task, index) in tasks">
-                        <span @click="taskDone" :class="task.done === true ? 'text-barra' : ''">{{task.text}}</span> 
+                        <span @click="taskDone(i)" :class="task.done === true ? 'text-barra' : ''">{{task.text}}</span> 
                         <i @click="removeTask" class="cross fa-solid fa-times-circle"></i>
                     </li>
                 </ul>
+                <p class="task_complete" v-else="">Hai completato tutti i tasks 🎉</p>
             </div>
         </div>
     </div>

@@ -64,12 +64,12 @@ const app = new Vue({
             }
         },
 
-        taskDone(index){
+        taskDone(i){
             //console.log('clicca su item');
-            if (this.tasks[index].done === false) {
-                this.tasks[index] = true;
-            } else if (this.tasks[index].done === true) {
-                this.tasks[index] = false
+            if (this.tasks[i].done === false) {
+                this.tasks[i].done = true;
+            } else if (this.tasks[i].done === true) {
+                this.tasks[i].done = false
             } 
         }
     }

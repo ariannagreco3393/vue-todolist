@@ -73,6 +73,11 @@ li {
     text-decoration: line-through;
 }
 
+.task_complete {
+    text-align: center;
+    font-size: 20px;
+}
+
 
 
 
