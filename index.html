@@ -27,7 +27,7 @@
             </div>
             <div class="tasks">
                 <ul>
-                    <li :class="task.done === true ? 'text-barra' : ''" v-for="task in tasks">{{task.text}}
+                    <li :class="task.done === true ? 'text-barra' : ''" v-for="(task, index) in tasks">{{task.text}}
                         <i @click="removeTask" class="cross fa-solid fa-times-circle"></i>
                     </li>
                 </ul>
