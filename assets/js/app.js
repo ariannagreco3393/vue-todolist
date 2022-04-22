@@ -27,9 +27,23 @@ Bonus:
 const app = new Vue({
     el: '#app',
     data: {
-
+        active: 0,
+        tasks: [
+            {
+                text: 'fare la spesa',
+                done: true
+            },
+            {
+                text: 'prenotare viaggio a Londra',
+                done: false
+            },
+            {
+                text: 'portare fuori il cane',
+                done: true
+            }
+        ]
     },
     methods: {
-        
+
     }
 })

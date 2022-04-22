@@ -27,7 +27,9 @@
             </div>
             <div class="tasks">
                 <ul>
-                    <li>task1</li>
+                    <li :class="task.done === true ? 'text-barra' : ''" v-for="task in tasks">{{task.text}}
+                        <i class="cross fa-solid fa-times-circle"></i>
+                    </li>
                 </ul>
             </div>
         </div>

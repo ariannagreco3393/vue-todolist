@@ -45,7 +45,6 @@ li {
 }
 
 .addTask > button {
-
     border: none;
     background-color: rgb(12, 12, 114);
     width: 100px;
@@ -64,6 +63,16 @@ li {
     border-radius: 10px;
     padding: 2rem;
 }
+
+.cross {
+    margin-left: 10px;
+}
+
+.text-barra{
+    text-decoration: line-through;
+}
+
+
 
 
 
