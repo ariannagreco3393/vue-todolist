@@ -28,6 +28,12 @@ const app = new Vue({
     el: '#app',
     data: {
         active: 0,
+
+        newTask: {
+            text: '',
+            done: false
+        },
+
         tasks: [
             {
                 text: 'fare la spesa',
@@ -47,6 +53,12 @@ const app = new Vue({
         removeTask(index){
             console.log('togli');
             this.tasks.splice(index, 1)
+        },
+
+        addTask(){
+            console.log('hai cliccato su aggiungi');
+            this.tasks.unshift(this.newTask)
+            this.newTask = ''
 
         }
     }
