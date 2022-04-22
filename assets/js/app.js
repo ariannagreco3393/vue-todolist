@@ -44,6 +44,10 @@ const app = new Vue({
         ]
     },
     methods: {
+        removeTask(index){
+            console.log('togli');
+            this.tasks.splice(index, 1)
 
+        }
     }
 })
