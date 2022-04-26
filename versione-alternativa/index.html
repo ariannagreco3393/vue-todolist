@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list 2</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div id="app2">
+        <div class="logo">
+            <img src="https://hiringplatform.boolean.careers/images/logo.png" alt="">
+        </div>
+        <div class="container">
+            <div class="addTask">
+                <form action="#" method="get" @submit.prevent="addTask">
+                    <input type="text" placeholder="nuova to do*" v-model="newTask.text" @keyup.enter="addTask" required
+                        minlength="3">
+                    <button type="submit">Aggiungi</button>
+                </form>
+            </div>
+            <div class="task_container">
+                <div class="tasks">
+                    <h2>To do list</h2>
+                    <ul v-if="tasks.length > 0">
+                        <li v-for="(task, index) in tasks">
+                            <input type="text" v-model="task.text"></input>
+                            <i @click="completeTask(i)" class="cross fa-solid fa-circle-check"></i>
+                            <i @click="removeTask" class="cross fa-solid fa-trash"></i>
+                        </li>
+                    </ul>
+                    <p class="task_complete" v-else="">Hai completato tutti i tasks 🎉</p>
+                </div>
+                <div class="tasks completed" v-if="tasksComplete.length > 0">
+                    <h2>completed</h2>
+                    <ul>
+                        <li v-for="(task, index) in tasksComplete">
+                            <span>{{tasksComplete.text}}</span>
+                            <i @click="removeTask" class="fa-solid fa-arrow-rotate-left"></i>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tasks trashed" v-if="deletedTask.length > 0">
+                    <h2>trashed <span @click="emptyBin">Empty Bin</span> </h2>
+                    <ul>
+                        <li v-for="(task, index) in deletedTask">
+                            <span>{{deletedTask.text}}</span>
+                            <i @click="removeTask" class="fa-solid fa-trash-arrow-up"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="./app.js"></script>
+</body>
+
+</html>
